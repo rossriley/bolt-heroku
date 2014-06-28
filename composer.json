@@ -7,7 +7,7 @@
     
     
     "require": {
-        "php": "5.5.*",
+        "php": "~5.5.14",
         "ext-gd": "*",
         "ext-mbstring": "*",
         "ext-sqlite3": "*",
