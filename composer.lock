@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "565fe261037d0127ff0164bd567a1162",
+    "hash": "562e5183ad4c82ff51a31a6346b62d8e",
     "packages": [
         {
             "name": "bolt/dumper",
@@ -4431,7 +4431,8 @@
         "phpunit/php-code-coverage": 20
     },
     "platform": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "ext-gd": "*"
     },
     "platform-dev": []
 }
