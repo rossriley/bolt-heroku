@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "da22930536024ddd5c34938219b168a7",
+    "hash": "6fef2d5a979f8dd00faa26174b126fd2",
     "packages": [
         {
             "name": "bolt/dumper",
@@ -4433,8 +4433,7 @@
     "platform": {
         "php": ">=5.3.3",
         "ext-gd": "*",
-        "ext-mbstring": "*",
-        "ext-pdo_sqlite": "*"
+        "ext-mbstring": "*"
     },
     "platform-dev": []
 }
