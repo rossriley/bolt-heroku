@@ -13,4 +13,19 @@ Options -Indexes
     Deny from all
   </IfModule>
 </FilesMatch>
-FallbackResource /index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteRule cache/ - [F]
+
+  # Some servers require the RewriteBase to be set. If so, set to the correct folder.
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !=/favicon.ico
+  RewriteRule ^ ./index.php [L]
+
+</IfModule>
+
