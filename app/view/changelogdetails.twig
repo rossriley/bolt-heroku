@@ -1,0 +1,48 @@
+{% import '_sub_pretty.twig' as pretty %}
+{% import '_sub_changelogdetails.twig' as changelogdetails %}
+{% include '_header.twig' %}
+
+{% macro pager(leftLink, centerLink, rightLink) %}
+        <div class="pagination pagination-centered">
+            <ul>
+                {% if leftLink %}
+                <li><a href="{{ leftLink }}"><i style="font-weight: bold" class="icon-angle-left"></i></a></li>
+                {% else %}
+                <li><span><i style="font-weight: bold" class="icon-angle-left"></i></span></li>
+                {% endif %}
+
+                {% if centerLink %}
+                <li><a href="{{ centerLink }}">{{ __('show all') }}</a></li>
+                {% else %}
+                <li><span>{{ __('show all') }}</span></li>
+                {% endif %}
+
+                {% if rightLink %}
+                <li><a href="{{ rightLink }}"><i style="font-weight: bold" class="icon-angle-right"></i></a></li>
+                {% else %}
+                <li><span><i style="font-weight: bold" class="icon-angle-right"></i></span></li>
+                {% endif %}
+            </ul>
+        </div>
+{% endmacro %}
+
+{% from _self import pager %}
+
+<div class="row-fluid">
+    <div class="span9">
+        <h1><strong>{{ __('Change Log') }}</strong> » {{ entry.title }}</h1>
+        {% if prevEntry %}
+            {% set leftLink = path('changelogdetails', { 'contenttype': contenttype, 'contentid': entry.contentid, 'id': prevEntry.id }) %}
+        {% endif %}
+        {% set centerLink = path('changeloglist', { 'contenttype': contenttype, 'contentid': entry.contentid }) %}
+        {% if nextEntry %}
+            {% set rightLink = path('changelogdetails', { 'contenttype': contenttype, 'contentid': entry.contentid, 'id': nextEntry.id }) %}
+        {% endif %}
+        {{ pager(leftLink|default(false), centerLink, rightLink|default(false)) }}
+        {{ changelogdetails.changelogdetails(entry) }}
+    </div>
+</div>
+
+{% include '_footer.twig' %}
+
+

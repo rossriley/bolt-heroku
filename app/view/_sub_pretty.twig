@@ -1,0 +1,53 @@
+{# A little collection of links for various backend entities #}
+
+{% macro userlink(user) %}{% spaceless %}
+<a href="{{ path('useredit', { 'id': user.id }) }}">
+    {{- user.displayname -}}
+</a>
+{% endspaceless %}{% endmacro %}
+
+{% macro contentlink_by_id(contenttype, title, content_id) %}{% spaceless %}
+<a href="{{ path('editcontent', { 'contenttypeslug': contenttype.slug, 'id': content_id }) }}">
+    {{- title|trimtext(70) -}}
+</a>
+{% endspaceless %}{% endmacro %}
+
+{% macro contentlink(contenttype, content) %}
+    {% import _self as crosslinks %}
+
+    {% if content.title is defined %}
+        {%set title = content.title %}
+    {% else %}
+        {%set title = content.name %}
+    {% endif %}
+    {{ crosslinks.contentlink_by_id(contenttype, title, content.id) }}
+{% endmacro %}
+
+{% macro changelogmutation(raw) %}
+    {% set mapping = {'UPDATE': 'changed', 'INSERT': 'created', 'DELETE': 'deleted', 'HOLD': 'put on hold', 'PUBLISH': 'published', 'DRAFT': 'depublished' } %}
+    {% if mapping[raw] is defined %}{{ mapping[raw] }}{%else%}{{ raw }}{%endif%}
+{% endmacro %}
+
+{% macro datetime(d) %}<time class="moment" datetime="{{ d|date("c") }}" title="{{ d }}">{{ d }}</time>{% endmacro %}
+
+{% macro typepopover(types) %}
+    {% set types = types|default(app.config.get('general/accept_file_types')) %}
+    {%  set text = __("Allowed filetypes are:") ~ "<code>" ~ types|join("</code>, <code>") ~ "</code>." %}
+    <span class="label info-pop" data-title=""
+      data-html="true" data-content="{{ text }}">{{ __('Types') }}</span>
+{% endmacro %}
+
+{% macro stackbutton(file) %}
+    {% if not stacked(file.newpath) %}
+    <a href="#" class="btn btn-mini" data-action="stack.addToStack('{{file.newpath}}', this);">
+        <i class="icon-paper-clip"></i>
+        {{ __('Place on stack') }}
+    </a>
+    {% endif %}
+{% endmacro %}
+
+{% macro datepickervalue(date) %}{% spaceless %}
+    {% if date > '1970-01-01 01:01:01' %}
+       {{ date|localdate('%A')|capitalize ~ date|date(', d') ~ date|localdate(' %B') ~ date|date(' Y') }}
+    {% endif %}
+{% endspaceless %}{% endmacro %}
