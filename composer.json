@@ -10,7 +10,7 @@
         "php": "5.5.*",
         "ext-gd": "*",
         "ext-mbstring": "*",
-        "ext-sqlite3": "*",
+        "ext-pdo_sqlite": "*",
         "bolt/dumper": ">=0.7",
         "bolt/thumbs": "1.7.*@dev",
         "doctrine/dbal": "~2.4",
