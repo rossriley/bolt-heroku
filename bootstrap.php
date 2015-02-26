@@ -7,7 +7,9 @@ $configuration->verify();
 $app = new Bolt\Application(array('resources'=>$configuration));
 
 // $app['session.storage.handler'] = $app->share(function ($app) {
-//     return new Your\MongoDBSessionHandler();
+//    $memcache = new \Memcached();
+//    $memcache->addServer();
+//     return new Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler();
 // });
 
 $app->initialize();
