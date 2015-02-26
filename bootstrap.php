@@ -6,7 +6,6 @@ $configuration->getVerifier()->removeCheck('apache');
 $configuration->verify();
 $app = new Bolt\Application(array('resources'=>$configuration));
 
-$app['session.storage.handler'] = null;
-
 $app->initialize();
+$app['session.storage.handler'] = null;
 $app->run();
