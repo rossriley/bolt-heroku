@@ -8,4 +8,5 @@ $app = new Bolt\Application(array('resources'=>$configuration));
 
 $app->initialize();
 $app['session.storage.handler'] = null;
+print_r($app['session']); exit;
 $app->run();
