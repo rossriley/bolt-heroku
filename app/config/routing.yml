@@ -1,5 +1,5 @@
 # This file defines user-definable routes for the frontend of your Bolt website.
-# Check below for examples, or read the documentation at 
+# Check below for examples, or read the documentation at
 # http://docs.bolt.cm/templates-routes#routing
 
 # ------------------------------------------------------------------------------
@@ -8,21 +8,21 @@
 
 
 # ------------------------------------------------------------------------------
-# These are the routes defining the default behaviour of Bolt's frontend. 
-# Changing these might give unexpected results or even break your website. If 
+# These are the routes defining the default behaviour of Bolt's frontend.
+# Changing these might give unexpected results or even break your website. If
 # possible, only add NEW routes above or below these.
 
 homepage:
   path:               /
-  defaults:           { _controller: 'Bolt\Controllers\Frontend::homepage' }
+  defaults:           { _controller: 'Bear\Controller\Frontend::homepage' }
 
 search:
   path:               /search
-  defaults:           { _controller: 'Bolt\Controllers\Frontend::search' }
+  defaults:           { _controller: 'Bear\Controller\Frontend::search' }
 
 preview:
   path:               /preview/{contenttypeslug}
-  defaults:           { _controller: 'Bolt\Controllers\Frontend::preview' }
+  defaults:           { _controller: 'Bear\Controller\Frontend::preview' }
   requirements:
     contenttypeslug:  'Bolt\Controllers\Routing::getAnyContentTypeRequirement'
 
@@ -87,18 +87,26 @@ contentlisting:
 #
 
 
-# Example: Use the following to add a route for contenttypes in your URL scheme. In this example we 
+# Example: Use the following to add a route for contenttypes in your URL scheme. In this example we
 # add routing for the 'chapter' taxonomy, so we can link to /meta/lorum-ipsum or /main/foo-bar.
-# note that the 'kitchensink' in the defaults and requirements determine the fallback, for when 
-# no option is specified in a specifid record. Basically, this makes the route respond to the 
-# default route /kitchensink/foo-bar as well. 
+# note that the 'showcase' in the defaults and requirements determine the fallback, for when
+# no option is specified in a specifid record. Basically, this makes the route respond to the
+# default route /showcase/foo-bar as well.
 
 # chapterbinding:
 #   path: /{chapters}/{slug}
-#   defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'kitchensinks', 'chapters': 'kitchensink' }
+#   defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'showcases', 'chapters': 'showcase' }
 #   requirements:
-#     chapters: [ 'Bolt\Controllers\Routing::getTaxonomyRequirement', ['chapters', 'kitchensink'] ]
-#   contenttype: kitchensinks
+#     chapters: [ 'Bolt\Controllers\Routing::getTaxonomyRequirement', ['chapters', 'showcase'] ]
+#   contenttype: showcases
+
+# categorybinding:
+#   path: /{categories}/{slug}
+#   defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'showcases', 'categories': 'none' }
+#   requirements:
+#     categories: [ 'Bolt\Controllers\Routing::getTaxonomyRequirement', ['categories', 'none'] ]
+#   contenttype: showcases
+
 
 # Supported internal defaults are:
 #  _controller   the controller class::method to be called
@@ -110,7 +118,7 @@ contentlisting:
 
 # Example: rendering a "static" template from the current theme with no associated record/content.
 # Note that you can still load and render content from within the template.
- 
+
 # templatebinding:
 #   path:     /static-page/
 #   defaults: { _controller: 'Bolt\Controllers\Frontend::template', template: 'static-page' }

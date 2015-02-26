@@ -1,0 +1,46 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <div class="col-left" >
+
+        <div class="slide fixed black-background"></div>
+
+        <div class="slide fixed" style="background-image:url(/img/slider-1.jpg)" id="current-article">
+            <div class="slider-cover" style="background-color: rgb(208, 0, 0);"></div>
+            <div class="slider-content image right-small">
+                <h4>{{ record.taxonomy.categories|first }}</h4>
+                <h1>{{ record.title }}</h1>
+                 <ul class="inline-list icons icon-images">
+                    <li><a href="#"><img src="img/icon-social-twitter.png"></li></a>
+                    <li><a href="#"><img src="img/icon-social-facebook.png"></li></a>
+                    <li><a href="#"><img src="img/icon-social-google.png"></li></a>
+                    <li><a href="#"><img src="img/icon-social-pinterest.png"></li></a>
+                </ul>
+            </div>
+
+            <div class="next-previous-wrapper">
+                {% set previous = record.previous('id') %}
+                {% if previous %}
+                    <i class="fa fa-angle-left"></i>
+                    <a class="previous" href="{{ previous.link }}">&laquo; {{ previous.title }}</a>
+                {% endif %}
+                -
+                {% set next = record.next('id') %}
+                {% if next %}
+                    <a class="next" href="{{ next.link }}">{{ next.title }} &raquo;</a>
+                    <i class="fa fa-angle-right"></i>
+                {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-right ">
+        <div class="row article">
+            <div class="small-12 medium-10 medium-offset-1 large-12 large-offset-0 columns">
+                {{ record.body }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
