@@ -10,6 +10,7 @@
         "php": "~5.6",
         "ext-gd": "*",
         "ext-mbstring": "*",
+        "ext-memcached": "*",
         "bolt/bolt": "dev-master",
         "composer/composer": "dev-master",
         "ircmaxell/random-lib": "dev-master"
