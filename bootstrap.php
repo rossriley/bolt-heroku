@@ -1,5 +1,5 @@
 <?php
-$configuration = new Bolt\Configuration\Composer(dirname(__DIR__));
+$configuration = new Bolt\Configuration\Composer(__DIR__);
 $configuration->setPath("files","files");
 $configuration->setPath("themebase","theme");
 $configuration->getVerifier()->removeCheck('apache');
