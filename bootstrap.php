@@ -1,4 +1,6 @@
 <?php
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
+
 $configuration = new Bolt\Configuration\Composer(__DIR__);
 $configuration->setPath("files","files");
 $configuration->setPath("themebase","theme");
