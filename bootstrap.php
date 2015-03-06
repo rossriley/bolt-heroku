@@ -8,8 +8,7 @@ $app = new Bolt\Application(array('resources'=>$configuration));
 
 $mc = new Memcached('mc');
 $mc->setOption(Memcached::OPT_BINARY_PROTOCOL, TRUE);
-$mc->setSaslAuthData( getenv("MEMCACHIER_USERNAME")
-                   , getenv("MEMCACHIER_PASSWORD") );
+$mc->setSaslAuthData( getenv("MEMCACHIER_USERNAME"), getenv("MEMCACHIER_PASSWORD") );
 
 $servers = explode(",", getenv("MEMCACHIER_SERVERS"));
 foreach ($servers as $s) {
