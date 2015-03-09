@@ -13,6 +13,7 @@ $mc->setOption(Memcached::OPT_BINARY_PROTOCOL, TRUE);
 $mc->setSaslAuthData( getenv("MEMCACHIER_USERNAME"), getenv("MEMCACHIER_PASSWORD") );
 
 $servers = explode(",", getenv("MEMCACHIER_SERVERS"));
+print_r($servers); exit;
 foreach ($servers as $s) {
     $parts = explode(":", $s);
     $mc->addServer($parts[0], $parts[1]);
