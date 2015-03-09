@@ -11,7 +11,7 @@
         "ext-gd": "*",
         "ext-mbstring": "*",
         "ext-memcached": "*",
-        "bolt/bolt": "dev-master",
+        "bolt/bolt": "~2.1",
         "composer/composer": "dev-master",
         "ircmaxell/random-lib": "dev-master"
     },

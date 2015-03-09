@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6ec8eb06101eab5f02492d4b611bc41d",
+    "hash": "3fb36f80fb6b43477b669ff7c8334a6a",
     "packages": [
         {
             "name": "bolt/bolt",
-            "version": "dev-master",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bolt/bolt.git",
-                "reference": "73194fbae0c6b68f9636480361227f17dfbcdf0c"
+                "reference": "0ec909c3c543559b016f3053ffd761ab02c5357a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bolt/bolt/zipball/73194fbae0c6b68f9636480361227f17dfbcdf0c",
-                "reference": "73194fbae0c6b68f9636480361227f17dfbcdf0c",
+                "url": "https://api.github.com/repos/bolt/bolt/zipball/0ec909c3c543559b016f3053ffd761ab02c5357a",
+                "reference": "0ec909c3c543559b016f3053ffd761ab02c5357a",
                 "shasum": ""
             },
             "require": {
@@ -29,6 +29,8 @@
                 "composer/composer": "dev-master",
                 "doctrine/dbal": "2.5.1",
                 "erusev/parsedown-extra": "~0.2",
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
                 "filp/whoops": "~1.1",
                 "guzzle/guzzle": "~3.9",
                 "hautelook/phpass": "~0.3",
@@ -76,7 +78,7 @@
             "autoload": {
                 "psr-4": {
                     "Bolt\\": "src",
-                    "Bolt\\Tests\\": "tests"
+                    "Bolt\\Tests\\": "tests/phpunit"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -91,7 +93,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2015-02-25 19:22:31"
+            "time": "2015-03-09 07:55:33"
         },
         {
             "name": "bolt/dumper",
@@ -363,12 +365,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "e5985a9b559747a5f3868361ff26c31818d8c184"
+                "reference": "b296e654eb3e136ca6fa08fa3bcb1d4782c13f8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/e5985a9b559747a5f3868361ff26c31818d8c184",
-                "reference": "e5985a9b559747a5f3868361ff26c31818d8c184",
+                "url": "https://api.github.com/repos/composer/composer/zipball/b296e654eb3e136ca6fa08fa3bcb1d4782c13f8b",
+                "reference": "b296e654eb3e136ca6fa08fa3bcb1d4782c13f8b",
                 "shasum": ""
             },
             "require": {
@@ -423,7 +425,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2015-02-25 19:44:34"
+            "time": "2015-03-09 11:13:01"
         },
         {
             "name": "doctrine/annotations",
@@ -1341,16 +1343,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f"
+                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
-                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c41c218e239b50446fd883acb1ecfd4b770caeae",
+                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae",
                 "shasum": ""
             },
             "require": {
@@ -1367,6 +1369,7 @@
                 "phpunit/phpunit": "~4.0",
                 "raven/raven": "~0.5",
                 "ruflin/elastica": "0.90.*",
+                "swiftmailer/swiftmailer": "~5.3",
                 "videlalvaro/php-amqplib": "~2.4"
             },
             "suggest": {
@@ -1383,7 +1386,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12.x-dev"
+                    "dev-master": "1.13.x-dev"
                 }
             },
             "autoload": {
@@ -1409,7 +1412,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-12-29 21:29:35"
+            "time": "2015-03-05 01:12:12"
         },
         {
             "name": "pimple/pimple",
@@ -1807,16 +1810,16 @@
         },
         {
             "name": "siriusphp/validation",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/siriusphp/validation.git",
-                "reference": "663ab6c8e11ec311da1a9cbfb0174691e1d6cc35"
+                "reference": "dd000d42f837085a16f940a0f43029e8cf0d1876"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/siriusphp/validation/zipball/663ab6c8e11ec311da1a9cbfb0174691e1d6cc35",
-                "reference": "663ab6c8e11ec311da1a9cbfb0174691e1d6cc35",
+                "url": "https://api.github.com/repos/siriusphp/validation/zipball/dd000d42f837085a16f940a0f43029e8cf0d1876",
+                "reference": "dd000d42f837085a16f940a0f43029e8cf0d1876",
                 "shasum": ""
             },
             "require": {
@@ -1850,7 +1853,7 @@
                 "security",
                 "validation"
             ],
-            "time": "2015-02-19 09:31:50"
+            "time": "2015-02-27 07:44:12"
         },
         {
             "name": "stecman/symfony-console-completion",
@@ -3928,16 +3931,16 @@
         },
         {
             "name": "pdepend/pdepend",
-            "version": "2.0.4",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "1b0acf162da4f30237987e61e177a57f78e3d87e"
+                "reference": "a15ffcbfbcc4570d4a733ca7b76e9cac0a56c3f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/1b0acf162da4f30237987e61e177a57f78e3d87e",
-                "reference": "1b0acf162da4f30237987e61e177a57f78e3d87e",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/a15ffcbfbcc4570d4a733ca7b76e9cac0a56c3f4",
+                "reference": "a15ffcbfbcc4570d4a733ca7b76e9cac0a56c3f4",
                 "shasum": ""
             },
             "require": {
@@ -3963,7 +3966,7 @@
                 "BSD-3-Clause"
             ],
             "description": "Official version of pdepend to be handled with Composer",
-            "time": "2014-12-04 12:38:39"
+            "time": "2015-03-02 08:06:43"
         },
         {
             "name": "phpmd/phpmd",
@@ -5005,7 +5008,6 @@
     "aliases": [],
     "minimum-stability": "beta",
     "stability-flags": {
-        "bolt/bolt": 20,
         "composer/composer": 20,
         "ircmaxell/random-lib": 20,
         "phpunit/php-code-coverage": 20
