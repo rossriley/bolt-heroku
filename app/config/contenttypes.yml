@@ -56,6 +56,7 @@ news:
     name: News
     singular_name: article
     slug: news
+    singular_slug: news
     fields:
         title:
             type: text
