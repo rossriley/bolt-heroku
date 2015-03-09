@@ -52,11 +52,11 @@ pages:
 # The 'sort' is set to '-datepublish', which means that newer entries will be
 # shown above older entries.
 
-news:
+entries:
     name: News
     singular_name: article
-    slug: news
-    singular_slug: news
+    slug: entries
+    singular_slug: entry
     fields:
         title:
             type: text
