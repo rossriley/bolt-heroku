@@ -12,9 +12,10 @@ $mc = new Memcached();
 $mc->setOption(Memcached::OPT_BINARY_PROTOCOL, TRUE);
 
 $mc = new Memcached('mc');
-$mc->setOption(Memcached::OPT_LIBKETAMA_COMPATIBLE, true);
-$mc->setSaslAuthData( getenv("MEMCACHIER_USERNAME"), getenv("MEMCACHIER_PASSWORD") );
+
 if (!count($mc->getServerList())) {
+    $mc->setOption(Memcached::OPT_LIBKETAMA_COMPATIBLE, true);
+    $mc->setSaslAuthData( getenv("MEMCACHIER_USERNAME"), getenv("MEMCACHIER_PASSWORD") );    
     $servers = explode(",", getenv("MEMCACHIER_SERVERS"));
 
     foreach ($servers as $s) {
