@@ -5,7 +5,7 @@ use Silex\Application;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
 
-class SessionServiceProvider implements ServiceProviderInterface
+class SessionProvider implements ServiceProviderInterface
 {
     private $app;
 
