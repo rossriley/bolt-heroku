@@ -34,4 +34,9 @@ class SessionServiceProvider implements ServiceProviderInterface
 
     }
     
+    public function boot()
+    {
+        
+    }
+    
 }
