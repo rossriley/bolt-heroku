@@ -4,6 +4,7 @@ namespace Bolt\Demo\Provider;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
+use Memcached;
 
 class SessionProvider implements ServiceProviderInterface
 {
