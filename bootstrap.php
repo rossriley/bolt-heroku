@@ -8,7 +8,7 @@ $configuration->getVerifier()->removeCheck('apache');
 $configuration->verify();
 $app = new Bolt\Application(array('resources'=>$configuration));
 
-$mc = new Memcached('mc');
+$mc = new Memcached();
 $mc->setOption(Memcached::OPT_BINARY_PROTOCOL, TRUE);
 $mc->setSaslAuthData( getenv("MEMCACHIER_USERNAME"), getenv("MEMCACHIER_PASSWORD") );
 
