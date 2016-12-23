@@ -2,6 +2,6 @@
     "name": "Bolt CMS Site",
     "description": "A simple Bolt App running on the base-2016 theme",
     "repository": "https://github.com/rossriley/bolt-heroku",
-    "logo": "https://bolt.cm/theme/bolt-v300/images/bolt.png",
+    "logo": "https://bolt.cm/distribution/logo/bolt-logo.png",
     "keywords": ["Bolt", "Bolt CMS"]
 }
