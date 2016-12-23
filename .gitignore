@@ -5,3 +5,4 @@ extensions/vendor
 app/database/*
 thumbs/
 vendor/
+app/config/config_local.yml
