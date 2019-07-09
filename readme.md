@@ -11,3 +11,15 @@
 ## Deploying with Nginx
 
 Using Nginx is also possible, by copying [/nginx.conf](/nginx.conf) to your project, and set Procfile to `web: vendor/bin/heroku-php-nginx -C nginx.conf public/`
+
+## Adding extensions to Bolt CMS
+
+It appears that, when adding extensions, it does not load properly on Heroku, unless you add
+
+```
+        "compile": [
+            "cd extensions && composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction"
+        ]
+```
+
+to script section of `composer.json`.

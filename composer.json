@@ -37,5 +37,10 @@
         "psr-4": {
             "Bolt\\Demo\\": "src"
         }       
+    },
+    "scripts": {
+        "compile": [
+            "cd extensions && composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction"
+        ]
     }
 }
