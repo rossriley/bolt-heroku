@@ -21,7 +21,7 @@
         "phpunit/dbunit": "1.2.3",
         "phpmd/phpmd": "1.5.0",
         "sebastian/phpcpd": "1.4.3",
-        "squizlabs/php_codesniffer": "1.4.6",
+        "squizlabs/php_codesniffer": "2.8.1",
         "codeception/codeception": "*"
     },
     
